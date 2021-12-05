@@ -41,32 +41,39 @@ struct ContentView: View {
                     }
                 }
             }
-            ZStack {
-                RoundedRectangle(cornerRadius: 7)
-                    .fill(Color(.systemGray4))
-                    .frame(width: 200, height: 200, alignment: .center)
-                VStack {
-                    Text("New Folder")
-                        .font(.headline)
-                    Text("Enter a name for this folder")
-                        .font(.subheadline)
-                    TextField("Name", text: $newFolderName)
-                        .frame(width: 200, height: 10)
-                        .background(Color(.white))
-                        .padding()
-                        .cornerRadius(7)
-                    Spacer()
-                    HStack {
-                        Button("Cancel") {
-                            print("Cancel")
-                        }
-                        Button("Save") {
-                            print("Save")
+            GeometryReader { geo in
+                ZStack {
+                    RoundedRectangle(cornerRadius: 7)
+                        .fill(Color(.systemGray4))
+                        .frame(width: geo.size.width * 0.70, height: geo.size.width * 0.40, alignment: .center)
+                    VStack {
+                        Text("New Folder")
+                            .font(.headline)
+                        Text("Enter a name for this folder")
+                            .font(.subheadline)
+                        Spacer()
+                        TextField("Name", text: $newFolderName)
+                            .frame(width: 200, height: 10)
+                            .padding()
+                            .background(Color(.white))
+                            .cornerRadius(7)
+                        Spacer()
+                        Color.gray.frame(width: 200, height: CGFloat(1))
+                        HStack {
+                            Button(action: {print("Cancel")}) {
+                                Text("Cancel")
+                                    .frame(maxWidth: .infinity)
+                            }
+                            Button(action: {print("Save")}) {
+                                Text("Save")
+                                    .frame(maxWidth: .infinity)
+                            }
                         }
                     }
+                    .frame(width: geo.size.width * 0.70, height: geo.size.width * 0.35)
                 }
+                .frame(width: geo.size.width, height: geo.size.height, alignment: .center)
             }
-            .frame(width: 200, height: 200)
         }
     }
 }
