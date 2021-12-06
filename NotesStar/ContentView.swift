@@ -15,7 +15,7 @@ struct ContentView: View {
         ZStack {
             NavigationView {
                 List {
-                    TextField("Search, text: $searchString")
+                    TextField("Search", text: $searchString)
                     Section(header:
                         Text("On My iPhone")
                             .font(.title3)
@@ -84,7 +84,7 @@ struct ContentView_Previews: PreviewProvider {
     }
 }
 
-struct Folder: View {
+struct FolderCell: View {
     var name: String
     var body: some View {
         HStack {
