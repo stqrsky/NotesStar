@@ -19,6 +19,12 @@ struct FolderView: View {
         }
         .navigationTitle(folderName)
         .listStyle(InsetGroupedListStyle())
+        .toolbar {
+            ToolbarItemGroup(placement: .bottomBar) {
+                Text("\(notes.count) " + "Note")
+                Image(systemName: "square.and.pencil")
+            }
+        }
     }
 }
 
