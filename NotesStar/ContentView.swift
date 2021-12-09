@@ -60,9 +60,11 @@ struct ContentView: View {
 struct FolderCell: View {
     var name: String
     var body: some View {
-        HStack {
-            Image(systemName: "folder")
-            Text(name)
+        NavigationLink(desination: FolderView(folderName: name)) {
+            HStack {
+                Image(systemName: "folder")
+                Text(name)
+            }
         }
     }
 }
@@ -122,6 +124,6 @@ struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         let testNotes = MyNotes()
         testNotes.folders = testFolders
-        return ContentView(myNotes: MyNotes)
+        return ContentView(myNotes: testNotes)
     }
 }

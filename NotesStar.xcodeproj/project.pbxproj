@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F840903E2762885E003EAD47 /* FolderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F840903D2762885E003EAD47 /* FolderView.swift */; };
 		F890808B275BF67E00FA33C8 /* NotesStarApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F890808A275BF67E00FA33C8 /* NotesStarApp.swift */; };
 		F890808D275BF67E00FA33C8 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F890808C275BF67E00FA33C8 /* ContentView.swift */; };
 		F890808F275BF68000FA33C8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F890808E275BF68000FA33C8 /* Assets.xcassets */; };
@@ -15,6 +16,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		F840903D2762885E003EAD47 /* FolderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FolderView.swift; sourceTree = "<group>"; };
 		F8908087275BF67E00FA33C8 /* NotesStar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NotesStar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F890808A275BF67E00FA33C8 /* NotesStarApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesStarApp.swift; sourceTree = "<group>"; };
 		F890808C275BF67E00FA33C8 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -56,6 +58,7 @@
 				F890808A275BF67E00FA33C8 /* NotesStarApp.swift */,
 				F890808C275BF67E00FA33C8 /* ContentView.swift */,
 				F8DEE505275E662F00A4BA96 /* MyNotes.swift */,
+				F840903D2762885E003EAD47 /* FolderView.swift */,
 				F890808E275BF68000FA33C8 /* Assets.xcassets */,
 				F8908090275BF68000FA33C8 /* Preview Content */,
 			);
@@ -142,6 +145,7 @@
 			files = (
 				F890808D275BF67E00FA33C8 /* ContentView.swift in Sources */,
 				F890808B275BF67E00FA33C8 /* NotesStarApp.swift in Sources */,
+				F840903E2762885E003EAD47 /* FolderView.swift in Sources */,
 				F8DEE506275E662F00A4BA96 /* MyNotes.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
