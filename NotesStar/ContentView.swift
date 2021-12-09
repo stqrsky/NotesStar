@@ -46,7 +46,14 @@ struct ContentView: View {
                             .onTapGesture {
                                 showingPopover.toggle()
                             }
-                        Image(systemName: "square.and.pencil")
+                        Spacer()
+                        HStack {
+                            Text("")
+                            NavigationLink(destination: NoteView()) {
+                                Image(systemName: "square.and.pencil")
+                            }
+                        }
+                            
                     }
                 }
             }
