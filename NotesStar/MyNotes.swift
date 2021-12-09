@@ -15,7 +15,7 @@ struct Folder: Identifiable {
     var id = UUID()
     
     var name: String
-    var notes: [Note] = textNotes
+    var notes: [Note] = testNotes
 }
 
 struct Note: Identifiable {

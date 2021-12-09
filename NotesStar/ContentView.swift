@@ -60,7 +60,7 @@ struct ContentView: View {
 struct FolderCell: View {
     var name: String
     var body: some View {
-        NavigationLink(desination: FolderView(folderName: name)) {
+        NavigationLink(destination: FolderView(folderName: name)) {
             HStack {
                 Image(systemName: "folder")
                 Text(name)

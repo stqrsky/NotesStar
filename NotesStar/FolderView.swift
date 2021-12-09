@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct FolderView: View {
-    var folderName = String
+    var folderName: String
     var notes = testNotes
     
     var body: some View {
