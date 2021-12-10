@@ -27,11 +27,19 @@ struct NoteView: View {
 struct TextView: UIViewRepresentable {
     @Binding var text: String
     
+    let textStorage = NSTextStorage()
+    
     func makeCoordinator() -> Coordinator {
         Coordinator(self)
     }
     
     func makeUIView(context: Context) -> UITextView {
+        let attrs =
+        [NSAttributedString.Key.font:UIFont
+            .preferredFont(forTextStyle: .body)]
+        let attrString = NSAttributedString(string: text, attributes: attrs)
+        textStorage.append(attrString)
+        
         let textView = UITextView()
         return textView
     }
