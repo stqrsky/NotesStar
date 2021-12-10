@@ -40,12 +40,18 @@ struct TextView: UIViewRepresentable {
         let attrString = NSAttributedString(string: text, attributes: attrs)
         textStorage.append(attrString)
         
-        let textView = UITextView()
+        let layoutManager = NSLayoutManager()
+        let container = NSTextContainer(size: CGSize())
+        container.widthTracksTextView = true
+        layoutManager.addTextContainer(container)
+        textStorage.addLayoutManager(layoutManager)
+        
+        let textView = UITextView(frame: CGRect(), textContainer: container)
         return textView
     }
     
     func updateUIView(_ uiView: UITextView, context: Context) {
-        uiView.attributedText = context.coordinator.updateAttributedString()
+//        uiView.attributedText = context.coordinator.updateAttributedString()
     }
 
     class Coordinator: NSObject {
