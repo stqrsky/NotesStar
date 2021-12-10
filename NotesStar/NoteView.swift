@@ -9,7 +9,7 @@ import SwiftUI
 
 struct NoteView: View {
     @State var title = ""
-    @State var noteText = "#bStarsky'b is in Bold\r #iStarsky#i will be in Italics\r #uStarsky#u will be underlined."
+    @State var noteText = "-Starsky- is striked through\r #bStarsky#b is in Bold\r #iStarsky#i will be in Italics\r #uStarsky#u will be underlined\r "
     
     var body: some View {
 //        TextEditor(text: $noteText)
@@ -65,10 +65,26 @@ struct TextView: UIViewRepresentable {
             super.init()
             
             let strikeThroughAttributes =
-            [NSAttributedString.Key.strikethroughStyle: 1]
+                [NSAttributedString.Key.strikethroughStyle: 1]
+            let fontDescriptor =
+                UIFontDescriptor.preferredFontDescriptor(withTextStyle: .body)
+            var descriptorWithTrait =
+                fontDescriptor.withSymbolicTraits(.traitBold)
+            var font = UIFont(descriptor: descriptorWithTrait!, size: 0)
+            let boldAttributes = [NSAttributedString.Key.font: font]
             
-            replacements =
-            ["(-\\w+(\\s\\w+)*-)":strikeThroughAttributes]
+            descriptorWithTrait = fontDescriptor.withSymbolicTraits(.traitItalic)
+            font = UIFont(descriptor: descriptorWithTrait!, size: 0)
+            let italicAttributes = [NSAttributedString.Key.font: font]
+            
+            let underlineAttributes =
+            [NSAttributedString.Key.underlineStyle: 1]
+            
+            replacements = ["(-\\w+(\\s\\w+)*-)":strikeThroughAttributes,
+                            "(#b\\w+(\\s\\w+)*#b)":boldAttributes,
+                            "(#i\\w+(\\s\\w+)*#i)":italicAttributes,
+                            "(#u\\w+(\\s\\w+)*#u)":underlineAttributes
+            ]
         }
 /*
         func updateAttributedString() -> NSAttributedString {
